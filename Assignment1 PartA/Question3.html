@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+
+/*
+a> Create two Date Objects. One with your birthdate and one with your friend’s. If your        friend is older than you, output should be his/her name. If you are output should be         your name. If you both are of same age output both names.
+*/
+
+
+
+function isOlder(myTime,myFriendsTime) {
+if(myTime>myFriendsTime) {
+    return "I am Older";
+  }
+else if(myTime===myFriendsTime){
+    return "We are of same age";
+        }
+else{
+    return "My Friend is older than me";
+}
+}
+
+var myBirthDate = new Date("1965/06/16");
+var myFriendsBirthDate = new Date("June 15 1965");
+console.log("My BirthDate is  " + myBirthDate.toString());
+console.log("My Friends BirthDate is  " + myFriendsBirthDate.toString());
+var myTime = myFriendsBirthDate.getTime();
+//console.log(myTime);
+var myFriendsTime = myBirthDate.getTime(); 
+//console.log(myFriendsTime);
+
+var whoIsOld = isOlder(myTime,myFriendsTime);
+console.log(whoIsOld);
+
+
+
+
+/*
+b) Write a javascript function which takes alphabet  as an argument and return whether          alphabet is vowel or consonant using switch case
+*/
+
+
+function isVowel (alphabet){
+  switch(alphabet) {
+    case 'a','e','i','o','u':
+      {
+        return true;
+        break;
+      }
+    default:
+      {
+        return false;
+        break;
+      }
+}       
+}
+
+var giveAlphabet = isVowel('b');
+console.log(y);
+
+
+
+</script>
+</body>
+</html>

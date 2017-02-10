@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+/* a) Write program to find numbers in string using regular expression.Input: I am 25 years old. I was born in 1991.  output : [ 25, 1991] Note:  Type of all elements of output array should be number
+*/
+
+var input = "I am 25 years old. I was born in 1991"
+var inpMatch = input.match(/[0-9]+/g);
+
+console.log(inpMatch);
+
+console.log(inpMatch.length);
+for(i=0;i<inpMatch.length;i++) {
+
+    inpMatch[i] = Number(inpMatch[i]);
+   // inp[i] = parseInt(inp , i );    
+  }
+
+console.log(inpMatch);
+
+
+
+
+
+/*b) Write a fuction to test valid email addresses using regular expression.
+*/
+
+
+
+function testingEmail(inputEmail) {
+
+var inpMatch = inputEmail.match(/[a-z0-9._+-]+@[a-z0-9]+\.[a-z]+/g);
+
+if(inpMatch==inputEmail) {
+
+    return "Valid Email";
+  
+  }
+else {
+  
+    return "InValid Email";
+  }
+}
+
+var Email = "arshdeep.singh@appdirect.com";
+var test = testingEmail(Email);
+console.log(test);
+
+
+
+</script>
+</body>
+</html>

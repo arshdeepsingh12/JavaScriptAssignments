@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+
+/*
+Create student object using object literal. Put all your details in it (e.g. name, address,    department, mobile, etc). Assign a method to it which you have written in Q 5. b) (copy        paste that function) and call this method to reverse your  name. Print output to console.
+*/
+
+
+var student = {
+  'name' : "Arshdeep Singh",
+  'address' : {
+    'office' : "pune",
+    'home' : "chandigarh"
+  },
+  'mobile' : 8146514148 ,
+ 'department' : "Yet not decided",
+ 'reverseName': function (str) {
+    var input = str;
+    var i;
+    var output="";
+    for(i=input.length-1;i>=0;i--)
+      {
+      // console.log(input[i]); 
+        var char = input[i];
+        output=output+char; 
+        // console.log(output[i]);
+      } 
+    return output;
+    }
+};
+
+
+console.log("My name when reversed is : " + student.reverseName(student.name));
+
+
+
+
+</script>
+</body>
+</html>

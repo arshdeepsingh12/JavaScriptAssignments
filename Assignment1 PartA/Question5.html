@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+/* a)  Write a JavaScript function reverses the non negative number.           Note: Use function statement syntax;eg. input:  1234 Output : 4321input:  “AppDirect” Output : “tceriDppA”
+*/
+
+
+function reverseTo(str) {
+  var input = str;
+  var i;
+  var output = "";
+  for ( i = input.length-1 ; i>=0 ; i--) {
+      console.log(input[i]); 
+      var char = input[i];
+      output = output+char; 
+      // console.log(output[i]);
+    } 
+  return output;
+}
+inputString = "integer";
+test =  reverseTo(inputString);
+console.log(inputString +  " 's Reversed string is : " + test);
+
+
+
+/*
+ b) Write a JavaScript function that dermines string is palindrome or not. Note: Use function expression syntax;e.g. input: "test"output : trueinput: "ram"output: false
+ */
+function isPallindrome(str) {
+ var strrev = reverseTo(str);
+  if(str==strrev) {
+      return true;
+    }
+  else {
+      return false;
+    }
+}
+
+inputString = "123454321";
+test = isPallindrome(inputString);
+console.log(inputString + "  is a Pallindrome : " + test);
+
+
+/* 
+c)
+Write a JavaScript function to find the first non repeating character in a string.e.ginput : 'xxydym' output : 'd'
+*/
+
+function findNonRepChar(testString)
+{
+var tempChar,i,store,j,stringSub,count;  
+
+for (var i = 0; i < testString.length; i++) {
+     count = 0;  
+     for (var j = 0; j < testString.length; j++) {
+       if ( testString[i] == testString[j] ) {
+         count = count + 1 ;
+       }
+     }
+    if(count<2)
+      {
+        return(testString[i]);
+      }
+}
+}
+
+var stringToTest = "xxyzozy";
+
+var nonRepChar = findNonRepChar(stringToTest);
+console.log(nonRepChar);
+
+</script>
+</body>
+</html>

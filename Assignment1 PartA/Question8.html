@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+/*
+Implement function verify(text) which verifies whether parentheses within text are     correctly nested. You need to consider three kinds: (), [], <>.
+*/
+
+
+
+
+function isValidExp(expres) {
+
+var stackArray = [];
+
+var expression = expres;
+
+function pushInto (bracket) {  
+
+  console.log("Pushing" + bracket);
+
+  stackArray.push(bracket);
+};
+
+function popOnto () {  
+
+  return stackArray.pop();
+
+};
+
+
+var count = 0;
+
+while(count<expression.length) { 
+
+      var c = expression[count];
+
+      console.log(c);
+
+      count++;
+
+      };
+
+count = 0;
+
+  
+while( count < expression.length) {  
+    
+    var c = expression[count];
+    
+    count++;
+    
+    if(c == '[' || c == '{' || c == '<' || c == '(' ) {
+      
+      pushInto(c);
+      
+    }
+    else if(c == ']' || c == '}' || c == '>' || c == ')') {
+
+      var matchChar2 = popOnto();
+
+      console.log("Popping " + matchChar2);
+
+      if((c == ']' && matchChar2 == '[')||(c == '}' && matchChar2 == '{')||(c == ')' && matchChar2 == '(')||(c == '>' && matchChar2 == '<')) {
+          if(stackArray.length==0) {
+          return "Valid Expression";
+            break;
+          }
+          else {
+              continue;
+            }
+        }
+      else {
+        return "InValid Expression";
+        break;
+      }
+      
+    }
+  else {
+      
+    }     
+     };
+
+}
+
+var expression = "[a+(b+c)]"
+
+var testExpression = isValidExp(expression);
+
+console.log(testExpression);
+
+
+
+
+
+</script>
+</body>
+</html>

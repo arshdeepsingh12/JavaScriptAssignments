@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+//a) Write javascript program to print pascal triangle.
+
+
+
+function PascalTriangle(rows){
+var tri = [];
+
+var i;
+
+tri[0] = [];
+
+
+  for(i=0;i<2*rows-1;i++) {
+      tri[0][i]=0;
+  };
+
+
+tri[0][rows-1]=1;
+/*
+for(i=0;i<2*rows-1;i++)
+{
+  console.log(tri[0][i]);
+};
+*/
+
+for(i=1;i<rows;i++) {
+    
+    tri[i]=[];
+    
+    for(j=0;j<2*rows-1;j++) {
+        
+        if(j!=0 || j!=(2*rows-2)) {
+            
+            tri[i][j]=tri[i-1][j-1]+tri[i-1][j+1];
+          
+          }
+        
+        if (j==0) {
+          
+          tri[i][j]=tri[i-1][j+1];
+        
+        }      
+        
+        if(j==2*rows-2) {
+          
+          tri[i][j]=tri[i-1][j-1];}  
+      
+      }
+      };
+      return tri;
+}
+
+function displayPT(tri)
+{
+for(i=0;i<tri.length;i++) {
+
+  console.log(tri[i]);
+
+};
+};
+var rowws = 3;
+var Triangular = PascalTriangle(rowws);
+displayPT(Triangular);
+
+
+
+
+// b) Write javascript program to multiply two matrices.
+
+
+
+    
+
+function matrixMultiply(mat1,mat2) {
+
+var check = mat1[0].length;
+var check2 = mat2.length;
+
+
+if(check != check2) {
+    console.log("Cannot be Multiplied");
+  }
+
+else{
+  var rows = mat1.length;
+  var columns = mat2[0].length;
+  var i,j,k,sum = 0;
+  var matMulti = [];
+  
+  for(i=0;i<rows;i++) {
+
+      matMulti[i] = [];
+      
+      for(j=0;j<columns;j++) {
+          
+          for(k=0;k<check;k++) {
+
+              sum = sum + (mat1[i][k]*mat2[k][j]);
+            
+            }
+          matMulti[i][j] = sum;
+          //console.log(sum);
+          sum = 0;
+        }
+    }
+}
+
+return matMulti;
+};
+
+function displayPT(tri)
+{
+for(i=0;i<tri.length;i++) {
+
+  console.log(tri[i]);
+
+};
+}
+var mat1 = [[1,2],[2,3],[3,4]];
+var mat2 = [[3,2],[8,1]];
+
+var multipliedMatrix = matrixMultiply(mat1,mat2);
+displayPT(multipliedMatrix);
+
+
+</script>
+</body>
+</html>
